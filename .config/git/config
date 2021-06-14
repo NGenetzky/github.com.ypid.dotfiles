@@ -126,7 +126,10 @@
 	annex-trustlevel = untrusted
 
 [commit]
+	#gpgsign = true
 	verbose = true
+[tag]
+	#gpgsign = true
 [pull]
 	ff = only
 [log]
