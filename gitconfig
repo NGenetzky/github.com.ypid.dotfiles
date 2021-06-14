@@ -11,22 +11,22 @@
 [diff]
 	; wordRegex = [[:alnum:]_]+|[^[:alnum:]_ ]+
 
-[filter "doublecmd_xml_file"]
-	clean = xmlstarlet ed \
-		--omit-decl \
-		--delete '//doublecmd/Tabs' \
-		--delete '//doublecmd/MainWindow' \
-		--delete '//doublecmd/Log' \
-		--delete '//doublecmd/IgnoreList' \
-		--delete '//doublecmd/Lua' \
-		--delete '//doublecmd/DirectoryHotList' \
-		--delete '//doublecmd/Colors/LogWindow' \
-		--delete '//doublecmd/FavoriteTabsOptions/FavTabsLastUniqueID' \
-		--delete '//doublecmd/Plugins/WcxPlugins/WcxPlugin/Flags' \
-		--update '//doublecmd/Tools/Editor/Path' --value 'gvim' \
-		--update '//doublecmd/Behaviours/RunInTerminalStayOpenCmd' --value 'x-terminal-emulator' \
-		--update '//doublecmd/Behaviours/JustRunTerminal' --value 'x-terminal-emulator' \
-		'%f' | sed --regexp-extended "/\\<Path\\>/s#\\\\\\\\#/#g;"
+#[filter "doublecmd_xml_file"]
+#	clean = xmlstarlet ed \
+#		--omit-decl \
+#		--delete '//doublecmd/Tabs' \
+#		--delete '//doublecmd/MainWindow' \
+#		--delete '//doublecmd/Log' \
+#		--delete '//doublecmd/IgnoreList' \
+#		--delete '//doublecmd/Lua' \
+#		--delete '//doublecmd/DirectoryHotList' \
+#		--delete '//doublecmd/Colors/LogWindow' \
+#		--delete '//doublecmd/FavoriteTabsOptions/FavTabsLastUniqueID' \
+#		--delete '//doublecmd/Plugins/WcxPlugins/WcxPlugin/Flags' \
+#		--update '//doublecmd/Tools/Editor/Path' --value 'gvim' \
+#		--update '//doublecmd/Behaviours/RunInTerminalStayOpenCmd' --value 'x-terminal-emulator' \
+#		--update '//doublecmd/Behaviours/JustRunTerminal' --value 'x-terminal-emulator' \
+#		'%f' | sed --regexp-extended "/\\<Path\\>/s#\\\\\\\\#/#g;"
 
 [filter "kitty_session_file"]
 	clean = LC_ALL=C sort | grep --no-filename --invert-match "^Password[^\\w]"
