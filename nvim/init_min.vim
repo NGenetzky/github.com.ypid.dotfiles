@@ -473,7 +473,13 @@
             set undoreload=10000        " Maximum number lines to save for undo on a buffer reload
         endif
 
-        set viminfo+=n~/.cache/vim/viminfo
+        " https://vi.stackexchange.com/a/10029
+        if !has('nvim')
+            set viminfo+=n~/.cache/vim/viminfo
+        else
+            " Do nothing here to use the neovim default
+            set viminfo+=n~/.cache/vim/main.shada
+        endif
 
         let g:skipview_files = [
             \ '*sec*',

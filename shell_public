@@ -23,7 +23,8 @@ export LANGUAGE='en_US:en'
 
 if [ -z "$ANDROID_ROOT" ]; then
     # http://terokarvinen.com/international_iso-8601_date_on_thunderbird.html
-    export LC_TIME='en_DK.UTF-8'
+    #export LC_TIME='en_DK.UTF-8'
+    export LC_TIME='en_US.UTF-8'
 fi
 
 ## https://www.suse.com/releasenotes/i386/openSUSE/11.1/RELEASE-NOTES.en.html#04
